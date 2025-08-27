@@ -41,7 +41,7 @@ estudiantes_materia_reprobada = 0
 
 
 for estudiante in estudiantes:
-    if all(nota > 3.95 for nota in estudiante["notas"]):
+    if all(nota >= 4.0 for nota in estudiante["notas"]):
         estudiantes_todo_aprobado += 1
     else:
         estudiantes_materia_reprobada += 1
@@ -74,3 +74,4 @@ print(f"Estudiantes con al menos un ramo reprobado: ", porcentaje_reprobado)
 promedio_estudiantes.sort(key=lambda e: e["promedio"], reverse=True)
 for estudiante in promedio_estudiantes:
   print(estudiante)
+
