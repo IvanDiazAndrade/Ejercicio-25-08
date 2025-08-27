@@ -69,3 +69,8 @@ print(f"las modas son: ", modas)
 porcentaje_reprobado = (estudiantes_materia_reprobada / len(estudiantes))*100
 porcentaje_reprobado = round(porcentaje_reprobado, 2)
 print(f"Estudiantes con al menos un ramo reprobado: ", porcentaje_reprobado)
+
+# 5-.
+promedio_estudiantes.sort(key=lambda e: e["promedio"], reverse=True)
+for estudiante in promedio_estudiantes:
+  print(estudiante)
