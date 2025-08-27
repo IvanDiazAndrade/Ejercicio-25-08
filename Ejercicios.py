@@ -37,6 +37,7 @@ estudiantes = [
 
 promedio_estudiantes = []
 estudiantes_todo_aprobado = 0
+estudiantes_materia_reprobada = 0
 
 
 for estudiante in estudiantes:
@@ -46,7 +47,7 @@ for estudiante in estudiantes:
         estudiantes_materia_reprobada += 1
     promedio = sum(estudiante["notas"]) / len(estudiante["notas"])
     promedio = round(promedio, 2)
-    promedio_estudiantes.append({"nombre:": estudiante["nombre"], "promedio:": promedio})
+    promedio_estudiantes.append({"nombre": estudiante["nombre"], "promedio": promedio})
 
 promedio_minimo = min(promedio_estudiantes, key=lambda x: x["promedio"])
 promedio_maximo = max(promedio_estudiantes, key=lambda x: x["promedio"])
@@ -65,5 +66,6 @@ print(f"las modas son: ", modas)
 
 #4-. al menos una reprobada
 
-print(f"Estudiantes con al menos un ramo reprobado: ", estudiantes_materia_reprobada)
-
+porcentaje_reprobado = (estudiantes_materia_reprobada / len(estudiantes))*100
+porcentaje_reprobado = round(porcentaje_reprobado, 2)
+print(f"Estudiantes con al menos un ramo reprobado: ", porcentaje_reprobado)
