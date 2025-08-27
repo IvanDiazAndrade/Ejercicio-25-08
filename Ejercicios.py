@@ -42,6 +42,8 @@ estudiantes_todo_aprobado = 0
 for estudiante in estudiantes:
     if all(nota > 3.95 for nota in estudiante["notas"]):
         estudiantes_todo_aprobado += 1
+    else:
+        estudiantes_materia_reprobada += 1
     promedio = sum(estudiante["notas"]) / len(estudiante["notas"])
     promedio = round(promedio, 2)
     promedio_estudiantes.append({"nombre:": estudiante["nombre"], "promedio:": promedio})
@@ -60,3 +62,8 @@ print(f"Estudiantes con todos los ramos aprobados: ", estudiantes_todo_aprobado)
 todas_las_notas = [nota for estudiante in estudiantes for nota in estudiante["notas"]]
 modas = statistics.multimode(todas_las_notas)
 print(f"las modas son: ", modas)
+
+#4-. al menos una reprobada
+
+print(f"Estudiantes con al menos un ramo reprobado: ", estudiantes_materia_reprobada)
+
